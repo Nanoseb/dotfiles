@@ -23,6 +23,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 
+# ctrl+arrows or shift+arrows for word mouvements
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;6C" forward-word
@@ -239,7 +240,6 @@ fi
 
 
 precmd () {
-        rehash
         GITpart=$(git_prompt_string)
         datetime=$(date +%H:%M:%S)
         nb_char_var=$(echo ${GITpart}${datetime}${USER}${HOST} | sed 's/%{[^%]*%}//g' | wc -m)
@@ -322,7 +322,6 @@ man() {
     LESS_TERMCAP_us=$'\E[04;38;5;146m' \
     man "$@"
 }
-
 
 
 LS_COLORS=$LS_COLORS:'di=1;34:' ; export LS_COLORS
