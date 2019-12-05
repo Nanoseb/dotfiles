@@ -17,6 +17,8 @@ alias treed="find . -type d | sed 's/[^/]*\//|   /g;s/| *\([^| ]\)/+--- \1/'"
 
 function f() { find * -iname "*$1*" | grep -i "$1"}
 alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -I'
 alias cpp='rsync --progress -h'
 alias diff='colordiff'
 alias findduplicate='find -not -empty -type f -printf "%s\n" | sort -rn | uniq -d | xargs -I{} -n1 find -type f -size {}c -print0 | xargs -0 md5sum | sort | uniq -w32 --all-repeated=separate'
