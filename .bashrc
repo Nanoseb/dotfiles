@@ -30,31 +30,41 @@ alias vi='vim'
 alias weather='curl http://wttr.in'
 
 
-
 # ----------------------------
 # -------  Functions  --------
 # ----------------------------
+
+cd.. () {
+ cd ..
+}
+
+
 # Extract any archive file
 extract () {
-	if [ -f $1 ] ; then
-	case $1 in
-		*.tar.bz2) tar xvjf $1 ;;
-		*.tar.gz) tar xvzf $1 ;;
-		*.bz2) bunzip2 $1 ;;
-		*.rar) unrar x $1 ;;
-		*.gz) gunzip $1 ;;
-		*.tar) tar xvf $1 ;;
-		*.tbz2) tar xvjf $1 ;;
-		*.tgz) tar xvzf $1 ;;
-		*.zip) unzip $1 ;;
-		*.Z) uncompress $1 ;;
-		*.7z) 7z x $1 ;;
-		*) echo "don't know how to extract '$1'..." ;;
-	esac
-	else
-		echo "'$1' is not a valid file!"
-	fi
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2) tar xvjf $1 ;;
+            *.tar.gz) tar xvzf $1 ;;
+            *.tar.xz) tar -xf $1 ;;
+            *.bz2) bunzip2 $1 ;;
+            *.rar) unrar x $1 ;;
+            *.gz) gunzip $1 ;;
+            *.tar) tar xvf $1 ;;
+            *.tbz2) tar xvjf $1 ;;
+            *.tgz) tar xvzf $1 ;;
+		    *.zip) foldername="${1%.*}"
+                    mkdir "$foldername" 
+                    unzip $1 -d "$foldername";;
+            *.Z) uncompress $1 ;;
+            *.7z) 7z x $1 ;;
+            *) echo "don't know how to extract '$1'..." ;;
+        esac
+    else
+        echo "'$1' is not a valid file!"
+    fi
 }
+
+
 
 # Adds colors to man pages
 man() {
@@ -104,5 +114,4 @@ PS1='\[\033[${col}m\] ┌────[\[\033[0;00m\]\u@\h\[\033[${col}m\]]$(gen_
 
 LS_COLORS=$LS_COLORS:'di=1;34:' ; export LS_COLORS
 export EDITOR="vim"
-
 

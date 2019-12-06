@@ -1,6 +1,6 @@
 # dotfiles
 
-This repository contains (a user friendly version of) the dotfiles I use on all my systems.
+This repository contains (a user friendly version of) the configuration files I use on all my systems.
 
 
 ### .bashrc
