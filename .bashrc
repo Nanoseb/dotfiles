@@ -105,11 +105,21 @@ gen_dash () {
         datetime=$(date +%H:%M:%S)
         nb_char_var=$(echo ${datetime}${USER}${HOSTNAME%%.*} | wc -m)
         ((nb=COLUMNS - nb_char_var - 16))
-        printf "%${nb}s\n" "" | sed s/" "/"─"/g
+        printf "%${nb}s\n" "" | sed s/" "/"$1"/g
 }
 
 # Prompt
-PS1='\[\033[${col}m\] ┌────[\[\033[0;00m\]\u@\h\[\033[${col}m\]]$(gen_dash)[\[\033[0;00m\]\t\[\033[${col}m\]]────┐ \n └───>\[\033[0;00m\] ${PWD/#$HOME/~} \$ '
+PS1='\[\033[${col}m\] ┌────[\[\033[0;00m\]\u@\h\[\033[${col}m\]]$(gen_dash ─)[\[\033[0;00m\]\t\[\033[${col}m\]]────┐ \n └───>\[\033[0;00m\] ${PWD/#$HOME/~} \$ '
+
+# prompt without utf8 caracteres
+# dash="-"
+# dash="–"
+# dash="—"
+# dash="―"
+# dash="‒"
+
+# dash4="$dash$dash$dash$dash"
+# PS1='\[\033[${col}m\] +$dash4[\[\033[0;00m\]\u@\h\[\033[${col}m\]]$(gen_dash $dash)[\[\033[0;00m\]\t\[\033[${col}m\]]$dash4+ \n +$dash4>\[\033[0;00m\] ${PWD/#$HOME/~} \$ '
 
 
 LS_COLORS=$LS_COLORS:'di=1;34:' ; export LS_COLORS
