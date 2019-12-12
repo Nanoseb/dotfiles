@@ -3,21 +3,21 @@
 This repository contains (a user friendly version of) the configuration files I use on all my systems.
 
 
-### .bashrc
+## .bashrc
 You have here a set of convenient aliases, a function to extract archives and a more graphical pleasing and useful prompt 
 (that displays for example the current full path). 
 
-### .inputrc
+## .inputrc
 This sets some keyboard shortcuts when using readline (bash) like using up arrow in a middle of a command to search back in the
 history or the use of ctrl+left or ctrl+right to move word by word.
 
-### .zshrc
+## .zshrc
 Provides the same features as the `.bashrc` for zsh, plus a git related prompt and some zsh specific autocompletion options.
 
-### .vimrc
+## .vimrc
 This includes some general vim settings, a status line and a function to prettify xml files (by just issuing `:PrettyXML`).
 
-##### Vim plugin I often use (with [pathogen](https://github.com/tpope/vim-pathogen)):
+#### Vim plugin I often use (with [pathogen](https://github.com/tpope/vim-pathogen)):
 Each of them being as useful as it is light ;)
 * [supertab](https://github.com/ervandew/supertab): autocompletion in insert mode
 * [tabular](https://github.com/godlygeek/tabular): align text
@@ -30,9 +30,9 @@ Each of them being as useful as it is light ;)
 * [vim-noscrollbar](https://github.com/gcavallanti/vim-noscrollbar): visual scrollbar in status line
 
 
-### .ssh/config
+## .ssh/config
 Enables compression by default and set up a connection reuse to speed up login step via the `ControlMaster` feature of ssh.
 
-### .nanorc
+## .nanorc
 Various settings for nano.
 
