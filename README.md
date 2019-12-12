@@ -17,7 +17,8 @@ Provides the same features as the `.bashrc` for zsh, plus a git related prompt a
 ### .vimrc
 This includes some general vim settings, a status line and a function to prettify xml files (by just issuing `:PrettyXML`).
 
-##### Plugin I often use:
+##### Vim plugin I often use (with [pathogen](https://github.com/tpope/vim-pathogen)):
+Each of them being as useful as it is light ;)
 * [supertab](https://github.com/ervandew/supertab): autocompletion in insert mode
 * [tabular](https://github.com/godlygeek/tabular): align text
 * [tagbar](https://github.com/majutsushi/tagbar): display code structure overview in a separate pane
