@@ -15,7 +15,6 @@ alias l='ls -CF'
 alias tree="find . | sed 's/[^/]*\//|   /g;s/| *\([^| ]\)/+--- \1/'"
 alias treed="find . -type d | sed 's/[^/]*\//|   /g;s/| *\([^| ]\)/+--- \1/'"
 
-function f() { find * -iname "*$1*" | grep -i "$1"}
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -I'
@@ -38,6 +37,9 @@ cd.. () {
  cd ..
 }
 
+f () {
+    find * -iname "*$1*" | grep -i "$1"
+}
 
 # Extract any archive file
 extract () {
