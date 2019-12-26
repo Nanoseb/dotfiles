@@ -8,12 +8,11 @@ syntax enable                              " enable syntax processing
 highlight Normal guibg=#333333 guifg=white
 set encoding=utf-8
 set background=dark
-set mouse=a                                " use mouse
+set mouse=a                                " enable the use of the mouse
 set whichwrap=b,s,<,>,[,]                  " traverse line break
 set tabstop=4                              " number of visual spaces per TAB
 set softtabstop=4                          " number of spaces in tab when editing
 set expandtab                              " tabs are spaces
-set mouse=a                                " enable the use of the mouse
 
 set number                                 " show line numbers
 set showcmd                                " show command in bottom bar
