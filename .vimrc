@@ -80,6 +80,9 @@ nnoremap K <C-U>
 " Insert new line with [enter] in normal mode
 nmap <CR> o<Esc>
 
+" Make backspace work normally
+set backspace=indent,eol,start
+
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7 
 
