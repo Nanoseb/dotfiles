@@ -37,6 +37,7 @@ cd.. () {
  cd ..
 }
 
+# Find file recursivelly
 f () {
     find * -iname "*$1*" | grep -i "$1"
 }
@@ -110,18 +111,13 @@ gen_dash () {
         printf "%${nb}s\n" "" | sed s/" "/"$1"/g
 }
 
+
 # Prompt
 PS1='\[\033[${col}m\] ┌────[\[\033[0;00m\]\u@\h\[\033[${col}m\]]$(gen_dash ─)[\[\033[0;00m\]\t\[\033[${col}m\]]────┐ \n └───>\[\033[0;00m\] ${PWD/#$HOME/~} \$ '
 
-# prompt without utf8 caracteres
-# dash="-"
-# dash="–"
-# dash="—"
-# dash="―"
-# dash="‒"
 
-# dash4="$dash$dash$dash$dash"
-# PS1='\[\033[${col}m\] +$dash4[\[\033[0;00m\]\u@\h\[\033[${col}m\]]$(gen_dash $dash)[\[\033[0;00m\]\t\[\033[${col}m\]]$dash4+ \n +$dash4>\[\033[0;00m\] ${PWD/#$HOME/~} \$ '
+# Force usage of UTF8 lang
+export LANG="en_US.UTF-8"
 
 
 LS_COLORS=$LS_COLORS:'di=1;34:' ; export LS_COLORS
